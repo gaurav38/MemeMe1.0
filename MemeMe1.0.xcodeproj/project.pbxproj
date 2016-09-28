@@ -514,6 +514,7 @@
 				C68543F81D9A00F30026B7F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C68543F91D9A00F30026B7F3 /* Build configuration list for PBXNativeTarget "MemeMe1.0Tests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +523,7 @@
 				C68543FB1D9A00F30026B7F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C68543FC1D9A00F30026B7F3 /* Build configuration list for PBXNativeTarget "MemeMe1.0UITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +532,7 @@
 				C68543FE1D9A00F30026B7F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
