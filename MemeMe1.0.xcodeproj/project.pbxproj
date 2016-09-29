@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6181B4C1D9CABD40058A16C /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6181B4B1D9CABD40058A16C /* Meme.swift */; };
 		C68543D21D9A00F30026B7F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68543D11D9A00F30026B7F3 /* AppDelegate.swift */; };
 		C68543D41D9A00F30026B7F3 /* MemeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68543D31D9A00F30026B7F3 /* MemeEditorViewController.swift */; };
 		C68543D71D9A00F30026B7F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68543D51D9A00F30026B7F3 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C6181B4B1D9CABD40058A16C /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		C68543CE1D9A00F30026B7F3 /* MemeMe1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C68543D11D9A00F30026B7F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C68543D31D9A00F30026B7F3 /* MemeEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				C68543D81D9A00F30026B7F3 /* Assets.xcassets */,
 				C68543DA1D9A00F30026B7F3 /* LaunchScreen.storyboard */,
 				C68543DD1D9A00F30026B7F3 /* Info.plist */,
+				C6181B4B1D9CABD40058A16C /* Meme.swift */,
 			);
 			path = MemeMe1.0;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6181B4C1D9CABD40058A16C /* Meme.swift in Sources */,
 				C68543D41D9A00F30026B7F3 /* MemeEditorViewController.swift in Sources */,
 				C68543D21D9A00F30026B7F3 /* AppDelegate.swift in Sources */,
 			);

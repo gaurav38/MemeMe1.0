@@ -76,6 +76,7 @@
                         <outlet property="bottomTextField" destination="WHe-6I-weA" id="39R-wn-H4l"/>
                         <outlet property="cameraButton" destination="ZGB-dE-Q58" id="aa7-7k-A5s"/>
                         <outlet property="imageView" destination="uhz-Fa-PlB" id="asC-Bb-ObW"/>
+                        <outlet property="toolBar" destination="gwa-0C-3w8" id="lqS-WR-lSP"/>
                         <outlet property="topTextField" destination="vjv-6u-XVp" id="3vL-bz-Sgy"/>
                     </connections>
                 </viewController>
