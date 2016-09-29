@@ -43,17 +43,13 @@
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uhz-Fa-PlB"/>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vjv-6u-XVp" userLabel="TopTextField">
-                                <frame key="frameInset" minY="89" width="375" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vjv-6u-XVp" userLabel="TopTextField">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WHe-6I-weA" userLabel="BottomTextField">
-                                <frame key="frameInset" minX="16" minY="506" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WHe-6I-weA" userLabel="BottomTextField">
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -63,12 +59,18 @@
                         <constraints>
                             <constraint firstItem="gwa-0C-3w8" firstAttribute="top" secondItem="uhz-Fa-PlB" secondAttribute="bottom" constant="38" id="1EU-6w-SAd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gwa-0C-3w8" secondAttribute="bottom" id="B1e-tA-gNP"/>
+                            <constraint firstAttribute="trailing" secondItem="WHe-6I-weA" secondAttribute="trailing" id="DdE-nh-zcq"/>
+                            <constraint firstItem="WHe-6I-weA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="N87-LT-AkJ"/>
                             <constraint firstItem="uhz-Fa-PlB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PM4-8L-8RE"/>
+                            <constraint firstItem="gwa-0C-3w8" firstAttribute="top" secondItem="WHe-6I-weA" secondAttribute="bottom" constant="87" id="WWP-63-AAG"/>
                             <constraint firstItem="gwa-0C-3w8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Wiy-aK-oTl"/>
-                            <constraint firstItem="gwa-0C-3w8" firstAttribute="top" secondItem="uhz-Fa-PlB" secondAttribute="bottom" constant="38" id="dcJ-fA-wSI"/>
+                            <constraint firstItem="gwa-0C-3w8" firstAttribute="top" secondItem="WHe-6I-weA" secondAttribute="bottom" constant="87" id="XEi-PM-9fL"/>
+                            <constraint firstItem="vjv-6u-XVp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ezb-g8-qP4"/>
                             <constraint firstAttribute="trailing" secondItem="uhz-Fa-PlB" secondAttribute="trailing" id="h9I-Nz-HtI"/>
+                            <constraint firstAttribute="trailing" secondItem="vjv-6u-XVp" secondAttribute="trailing" id="iZJ-vE-B2m"/>
                             <constraint firstItem="uhz-Fa-PlB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="23" id="lbY-No-mUe"/>
                             <constraint firstAttribute="trailing" secondItem="gwa-0C-3w8" secondAttribute="trailing" id="oOP-fx-enp"/>
+                            <constraint firstItem="vjv-6u-XVp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="69" id="tka-7Z-cul"/>
                         </constraints>
                     </view>
                     <connections>
