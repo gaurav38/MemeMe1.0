@@ -18,22 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uhz-Fa-PlB"/>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vjv-6u-XVp" userLabel="TopTextField">
-                                <frame key="frameInset" minX="16" minY="89" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WHe-6I-weA" userLabel="BottomTextField">
-                                <frame key="frameInset" minX="16" minY="434" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwa-0C-3w8">
                                 <items>
                                     <barButtonItem title="Album Button" style="plain" id="O58-nB-oS1">
@@ -58,15 +42,32 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uhz-Fa-PlB"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vjv-6u-XVp" userLabel="TopTextField">
+                                <frame key="frameInset" minY="89" width="375" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WHe-6I-weA" userLabel="BottomTextField">
+                                <frame key="frameInset" minX="16" minY="506" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gwa-0C-3w8" secondAttribute="bottom" id="EpL-iv-yEW"/>
+                            <constraint firstItem="gwa-0C-3w8" firstAttribute="top" secondItem="uhz-Fa-PlB" secondAttribute="bottom" constant="38" id="1EU-6w-SAd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gwa-0C-3w8" secondAttribute="bottom" id="B1e-tA-gNP"/>
                             <constraint firstItem="uhz-Fa-PlB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PM4-8L-8RE"/>
                             <constraint firstItem="gwa-0C-3w8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Wiy-aK-oTl"/>
-                            <constraint firstItem="uhz-Fa-PlB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="23" id="ex9-PD-Phr"/>
+                            <constraint firstItem="gwa-0C-3w8" firstAttribute="top" secondItem="uhz-Fa-PlB" secondAttribute="bottom" constant="38" id="dcJ-fA-wSI"/>
                             <constraint firstAttribute="trailing" secondItem="uhz-Fa-PlB" secondAttribute="trailing" id="h9I-Nz-HtI"/>
-                            <constraint firstItem="gwa-0C-3w8" firstAttribute="top" secondItem="uhz-Fa-PlB" secondAttribute="bottom" constant="114" id="hSz-pR-Z6p"/>
+                            <constraint firstItem="uhz-Fa-PlB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="23" id="lbY-No-mUe"/>
                             <constraint firstAttribute="trailing" secondItem="gwa-0C-3w8" secondAttribute="trailing" id="oOP-fx-enp"/>
                         </constraints>
                     </view>
