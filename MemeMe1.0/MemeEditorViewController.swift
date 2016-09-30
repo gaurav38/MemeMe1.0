@@ -25,7 +25,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         NSStrokeColorAttributeName : UIColor.black,
         NSForegroundColorAttributeName : UIColor.white,
         NSFontAttributeName : UIFont(name : "HelveticaNeue-CondensedBlack", size : 40)!,
-        NSStrokeWidthAttributeName : CGFloat(1)] as [String : Any]
+        NSStrokeWidthAttributeName : -2] as [String : Any]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,12 +54,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         topTextField.text = "TOP"
         topTextField.defaultTextAttributes = memeTextAttributes
         topTextField.textAlignment = NSTextAlignment.center
-        topTextField.backgroundColor = UIColor.clear
         topTextField.borderStyle = UITextBorderStyle(rawValue: 0)!
         bottomTextField.text = "BOTTOM"
         bottomTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.textAlignment = NSTextAlignment.center
-        bottomTextField.backgroundColor = UIColor.clear
         bottomTextField.borderStyle = UITextBorderStyle(rawValue: 0)!
     }
     
@@ -109,10 +107,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         controller.delegate = self
         controller.sourceType = UIImagePickerControllerSourceType.camera
         present(controller, animated: true, completion: nil)
+
     }
     
     @IBAction func cancelMeme(_ sender: AnyObject) {
         imageView.image = nil
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
     }
     
     // Move the view when the keyboard covers the text field
