@@ -15,11 +15,14 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var navigationBar: UINavigationBar!
     
     let defaultTopTextFieldText = "TOP"
     let defaultBottomTextFieldText = "BOTTOM"
     
     var screenScrolledUp = false
+    var memedImage:UIImage!
     
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.black,
@@ -67,11 +70,11 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
         }
-        dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
     
     // MARK: UITextFieldDelegate
@@ -108,6 +111,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         controller.sourceType = UIImagePickerControllerSourceType.camera
         present(controller, animated: true, completion: nil)
 
+    }
+    
+    @IBAction func shareMeme(_ sender: AnyObject) {
+        generateMemedImage()
+        let activityViewContoller: UIActivityViewController
+        activityViewContoller = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        self.present(activityViewContoller, animated: true, completion: nil)
     }
     
     @IBAction func cancelMeme(_ sender: AnyObject) {
@@ -147,19 +157,20 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func generateMemedImage() -> UIImage {
+    func generateMemedImage() {
         toolBar.isHidden = true
+        navigationBar.isHidden = true
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
-        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        self.memedImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         toolBar.isHidden = false
-        return memedImage
+        navigationBar.isHidden = false
     }
     
     func save() {
         let memedImage = generateMemedImage()
-        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: self.memedImage)
     }
 }
 
