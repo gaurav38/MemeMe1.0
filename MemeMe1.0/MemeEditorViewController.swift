@@ -19,6 +19,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     let defaultTopTextFieldText = "TOP"
     let defaultBottomTextFieldText = "BOTTOM"
     
+    var screenScrolledUp = false
+    
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.black,
         NSForegroundColorAttributeName : UIColor.white,
@@ -41,6 +43,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     func updateTextFieldsAppearances()
@@ -105,13 +111,23 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         present(controller, animated: true, completion: nil)
     }
     
+    @IBAction func cancelMeme(_ sender: AnyObject) {
+        imageView.image = nil
+    }
+    
     // Move the view when the keyboard covers the text field
     func keyboardWillShow(notification: NSNotification) {
-        self.view.frame.origin.y -= getKeyboardHeight(notification: notification)
+        if self.bottomTextField.isEditing {
+            self.view.frame.origin.y -= getKeyboardHeight(notification: notification)
+            screenScrolledUp = true
+        }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y += getKeyboardHeight(notification: notification)
+        if screenScrolledUp {
+            self.view.frame.origin.y += getKeyboardHeight(notification: notification)
+            screenScrolledUp = false
+        }
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {

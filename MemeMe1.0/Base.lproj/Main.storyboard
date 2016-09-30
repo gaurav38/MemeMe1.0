@@ -48,6 +48,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A55-XJ-dAD">
+                                <items>
+                                    <navigationItem title="MemeMe" id="eOU-BR-6JM">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="Qbb-Qi-JhH">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="O4u-sm-58t">
+                                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancelMeme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pv8-J1-uJB"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vjv-6u-XVp" userLabel="TopTextField">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="textColor"/>
@@ -57,19 +73,22 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gwa-0C-3w8" firstAttribute="top" secondItem="WHe-6I-weA" secondAttribute="bottom" constant="48" id="39R-gV-Vbq"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gwa-0C-3w8" secondAttribute="bottom" id="B1e-tA-gNP"/>
+                            <constraint firstAttribute="trailing" secondItem="A55-XJ-dAD" secondAttribute="trailing" id="3cg-ad-Fbe"/>
                             <constraint firstAttribute="trailing" secondItem="WHe-6I-weA" secondAttribute="trailing" id="DdE-nh-zcq"/>
-                            <constraint firstItem="uhz-Fa-PlB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="23" id="I6M-jM-fHm"/>
+                            <constraint firstItem="WHe-6I-weA" firstAttribute="top" secondItem="uhz-Fa-PlB" secondAttribute="bottom" constant="-58" id="Jrr-nR-n1r"/>
+                            <constraint firstItem="uhz-Fa-PlB" firstAttribute="top" secondItem="vjv-6u-XVp" secondAttribute="bottom" constant="-57" id="JxC-pe-Cb2"/>
                             <constraint firstItem="WHe-6I-weA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="N87-LT-AkJ"/>
                             <constraint firstItem="uhz-Fa-PlB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PM4-8L-8RE"/>
+                            <constraint firstItem="A55-XJ-dAD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TgA-uz-RtS"/>
                             <constraint firstItem="gwa-0C-3w8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Wiy-aK-oTl"/>
+                            <constraint firstItem="uhz-Fa-PlB" firstAttribute="top" secondItem="A55-XJ-dAD" secondAttribute="bottom" constant="22" id="ean-yK-rrH"/>
                             <constraint firstItem="vjv-6u-XVp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ezb-g8-qP4"/>
                             <constraint firstAttribute="trailing" secondItem="uhz-Fa-PlB" secondAttribute="trailing" id="h9I-Nz-HtI"/>
-                            <constraint firstItem="gwa-0C-3w8" firstAttribute="top" secondItem="uhz-Fa-PlB" secondAttribute="bottom" constant="15" id="hxM-de-Jd4"/>
                             <constraint firstAttribute="trailing" secondItem="vjv-6u-XVp" secondAttribute="trailing" id="iZJ-vE-B2m"/>
                             <constraint firstAttribute="trailing" secondItem="gwa-0C-3w8" secondAttribute="trailing" id="oOP-fx-enp"/>
-                            <constraint firstItem="vjv-6u-XVp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="55" id="rFd-EW-QbK"/>
+                            <constraint firstItem="A55-XJ-dAD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pKI-je-NDc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gwa-0C-3w8" secondAttribute="bottom" id="tLT-yp-Lqf"/>
+                            <constraint firstItem="gwa-0C-3w8" firstAttribute="top" secondItem="uhz-Fa-PlB" secondAttribute="bottom" constant="23" id="ua4-xw-Xlo"/>
                         </constraints>
                     </view>
                     <connections>
