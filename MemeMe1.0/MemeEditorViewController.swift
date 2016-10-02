@@ -32,9 +32,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateTextFieldsAppearances()
-        topTextField.delegate = self
-        bottomTextField.delegate = self
+        updateTextFieldsAppearances(textField: topTextField)
+        updateTextFieldsAppearances(textField: bottomTextField)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,15 +52,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         return true
     }
     
-    func updateTextFieldsAppearances()
+    func updateTextFieldsAppearances(textField: UITextField)
     {
+        textField.delegate = self
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = NSTextAlignment.center
+        textField.borderStyle = UITextBorderStyle(rawValue: 0)!
         resetTextFields()
-        topTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.textAlignment = NSTextAlignment.center
-        topTextField.borderStyle = UITextBorderStyle(rawValue: 0)!
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.textAlignment = NSTextAlignment.center
-        bottomTextField.borderStyle = UITextBorderStyle(rawValue: 0)!
     }
     
     func resetTextFields() {
@@ -104,20 +101,21 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     // MARK: Pick image IBActions
 
     @IBAction func pickAnImageFromAlbum(_ sender: AnyObject) {
-        resetTextFields()
-        let controller = UIImagePickerController()
-        controller.delegate = self
-        controller.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        present(controller, animated: true, completion: nil)
+        pickImageFromSource(sourceType: UIImagePickerControllerSourceType.photoLibrary)
     }
     
     @IBAction func pickAnImageFromCamera(_ sender: AnyObject) {
+        pickImageFromSource(sourceType: UIImagePickerControllerSourceType.camera)
+
+    }
+    
+    func pickImageFromSource(sourceType: UIImagePickerControllerSourceType)
+    {
         resetTextFields()
         let controller = UIImagePickerController()
         controller.delegate = self
-        controller.sourceType = UIImagePickerControllerSourceType.camera
+        controller.sourceType = sourceType
         present(controller, animated: true, completion: nil)
-
     }
     
     @IBAction func shareMeme(_ sender: AnyObject) {
@@ -138,21 +136,21 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         resetTextFields()
         imageView.image = nil
         memedImage = nil
-
+        shareButton.isEnabled = false
         self.dismiss(animated: true, completion: nil)
     }
     
     // Move the view when the keyboard covers the text field
     func keyboardWillShow(notification: NSNotification) {
         if self.bottomTextField.isEditing {
-            self.view.frame.origin.y -= getKeyboardHeight(notification: notification)
+            self.view.frame.origin.y = getKeyboardHeight(notification: notification) * (-1)
             screenScrolledUp = true
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
         if screenScrolledUp {
-            self.view.frame.origin.y += getKeyboardHeight(notification: notification)
+            self.view.frame.origin.y = 0
             screenScrolledUp = false
         }
     }
