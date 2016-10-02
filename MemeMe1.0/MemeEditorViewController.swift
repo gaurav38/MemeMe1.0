@@ -55,14 +55,18 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     func updateTextFieldsAppearances()
     {
-        topTextField.text = "TOP"
+        resetTextFields()
         topTextField.defaultTextAttributes = memeTextAttributes
         topTextField.textAlignment = NSTextAlignment.center
         topTextField.borderStyle = UITextBorderStyle(rawValue: 0)!
-        bottomTextField.text = "BOTTOM"
         bottomTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.textAlignment = NSTextAlignment.center
         bottomTextField.borderStyle = UITextBorderStyle(rawValue: 0)!
+    }
+    
+    func resetTextFields() {
+        topTextField.text = defaultTopTextFieldText
+        bottomTextField.text = defaultBottomTextFieldText
     }
     
     // MARK: UIImagePickerDelegate
@@ -100,6 +104,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     // MARK: Pick image IBActions
 
     @IBAction func pickAnImageFromAlbum(_ sender: AnyObject) {
+        resetTextFields()
         let controller = UIImagePickerController()
         controller.delegate = self
         controller.sourceType = UIImagePickerControllerSourceType.photoLibrary
@@ -107,6 +112,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func pickAnImageFromCamera(_ sender: AnyObject) {
+        resetTextFields()
         let controller = UIImagePickerController()
         controller.delegate = self
         controller.sourceType = UIImagePickerControllerSourceType.camera
@@ -122,16 +128,18 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             activity, success, items, error in
             if success {
                 self.save()
+                self.dismiss(animated: true, completion: nil)
             }
         }
         self.present(activityViewContoller, animated: true, completion: nil)
     }
     
     @IBAction func cancelMeme(_ sender: AnyObject) {
+        resetTextFields()
         imageView.image = nil
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
         memedImage = nil
+
+        self.dismiss(animated: true, completion: nil)
     }
     
     // Move the view when the keyboard covers the text field
