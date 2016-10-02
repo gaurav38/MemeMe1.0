@@ -41,6 +41,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
+        shareButton.isEnabled = imageView.image != nil
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -117,6 +118,12 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         generateMemedImage()
         let activityViewContoller: UIActivityViewController
         activityViewContoller = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        activityViewContoller.completionWithItemsHandler = {
+            activity, success, items, error in
+            if success {
+                self.save()
+            }
+        }
         self.present(activityViewContoller, animated: true, completion: nil)
     }
     
@@ -124,6 +131,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         imageView.image = nil
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
+        memedImage = nil
     }
     
     // Move the view when the keyboard covers the text field
@@ -169,7 +177,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func save() {
-        let memedImage = generateMemedImage()
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: self.memedImage)
     }
 }
